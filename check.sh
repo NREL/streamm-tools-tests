@@ -81,6 +81,25 @@ newTest() {
 }
 
 
+#
+# Check if TOOLS_PATH is set
+#
+if [ ! -n "${TOOLS_PATH+1}" ]; then
+    echo " "
+    echo "---------------------------------------------------------------"
+    echo "TOOLS_PATH is unset. Set location of 'tools' repo to this var"
+    echo " "
+    echo " eg: TOOLS_PATH='path-to-tools'/tools"
+    echo "     then "
+    echo "     export TOOLS_PATH"
+    echo "---------------------------------------------------------------"
+    echo " "
+    exit
+fi
+
+#
+# Main functions
+#
 if [ $# == 0 ]; then
     usage
 
@@ -155,10 +174,8 @@ elif [ $1 == "clean" ]; then
 
 else
 
+    # Run single test
     echo " "
-    echo "Parallel tests should have 'n2' as argument (see help)"
-    echo " "
-
     if [ $# == 2 ]; then
 	if [ $2 == 'n2' ]; then
 	    compareTest $1 'mpirun -n 2'
