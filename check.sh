@@ -4,11 +4,11 @@
 usage() {
     echo " "
     echo "Usage: check.sh [arg]"
-    echo "    arg -- new            : Runs tests and copies output to results directory"
-    echo "        -- all            : Runs all tests and compares to files in results directory"
-    echo "        -- clean          : Remove auxillary files generated from running tests"
-    echo "        -- 'test-name'    : Run compare for 'test-name'"
-    echo "        -- 'test-name' n2 : Run compare for 'test-name' for test requiring 2 procs"
+    echo "    arg -- new                 : Runs tests and copies output to results directory"
+    echo "        -- all                 : Runs all tests and compares to files in results directory"
+    echo "        -- clean               : Remove auxillary files generated from running tests"
+    echo "        -- 'test-name'         : Run compare for 'test-name'"
+    echo "        -- replace 'test-name' : Runs test and copies output to results directory"
     echo " "
     echo " "
     echo "To add a SERIAL test:"
@@ -74,8 +74,9 @@ newTest() {
 
     testName=$1
     runCmd=$2
-    echo "--------- Checking in results for $testName ---------"
+    echo "--------- Copying results for $testName ---------"
     $runCmd $testName > results/$testName.txt
+    echo "Remember to commit/push new results "
     echo "-----------------------------------------------------"
     echo " "
 }
@@ -168,6 +169,31 @@ elif [ $1 == "all" ]; then
     echo " "
 
 
+elif [ $1 == "replace" ]; then
+
+    testName=$2
+
+    echo " "
+    echo "Checking in new results for $testName"
+    echo " "
+
+    echo "Proceed [y]yes [n]no"
+    read -e ans
+    if [ $ans == "y" ]; then
+	echo " "
+    else
+	echo " "; exit
+    fi
+
+    if [[ $testName == *n2* ]]; then
+        # Pick out job to run on 2 procs
+	newTest $testName ' mpirun -n 2'
+    else
+        # Serial job
+	newTest $testName " "
+    fi
+
+
 elif [ $1 == "clean" ]; then
 
     echo " "
@@ -183,12 +209,14 @@ else
 
     # Run single test
     echo " "
-    if [ $# == 2 ]; then
-	if [ $2 == 'n2' ]; then
-	    compareTest $1 'mpirun -n 2'
-	fi
+    testName=$1
+
+    if [[ $testName == *n2* ]]; then
+        # Pick out job to run on 2 procs
+	compareTest $testName 'mpirun -n 2'
     else
-	compareTest $1
+        # Serial/other jobs
+	compareTest $testName ''
     fi
 
 fi
