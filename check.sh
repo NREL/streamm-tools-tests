@@ -97,6 +97,13 @@ if [ ! -n "${TOOLS_PATH+1}" ]; then
     exit
 fi
 
+
+#
+# Should be moved when all AtomicPy code moved to STREAMM
+#
+PYTHONPATH=$PYTHONPATH:$TOOLS_PATH/AtomicPy/src
+export PYTHONPATH
+
 #
 # Main functions
 #
