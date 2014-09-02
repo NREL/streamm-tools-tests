@@ -104,6 +104,9 @@ fi
 #
 PYTHONPATH=$PYTHONPATH:$TOOLS_PATH/AtomicPy/src
 export PYTHONPATH
+echo " "
+echo "PYTHONPATH = $PYTHONPATH"
+echo " "
 
 #
 # Main functions
@@ -211,12 +214,19 @@ else
     echo " "
     testName=$1
 
-    if [[ $testName == *n2* ]]; then
-        # Pick out job to run on 2 procs
-	compareTest $testName 'mpirun -n 2'
+    if test -f $testName; then
+
+	if [[ $testName == *n2* ]]; then
+            # Pick out job to run on 2 procs
+	    compareTest $testName 'mpirun -n 2'
+	else
+            # Serial/other jobs
+	    compareTest $testName ''
+	fi
+
     else
-        # Serial/other jobs
-	compareTest $testName ''
+	echo "Test name does not exist"
     fi
+
 
 fi
