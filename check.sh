@@ -45,7 +45,7 @@ compareTest() {
     testName=$1
     runCmd=$2
 
-    $runCmd $testName > tmp
+    $runCmd ./$testName > tmp
     diff $IGNORE_OPTIONS tmp results/$testName.txt > $testName.stat
     diffLength=`wc -l $testName.stat | awk '{print $1}'`
     rm -rf tmp
