@@ -18,7 +18,7 @@ None
  Searching group j  {'symbol': ['C']}
  search finished 
 
-  Date 2014-09-29 14:44:48.057000 
+  Date 2014-09-29 15:37:05.967474 
   Number of processors  1 
   Particles of group i: 200 
 ---------------------------------------------------------------------
@@ -39,7 +39,7 @@ None
  analysis of frame 1 on processor 1 
  box from min max 47.099043 
 
-       Frame  1  rdf calculated in 0 min  0.000000 sec 
+       Frame  1  
        with volume 104480.741941 Angstroms^3 estimated from max/min
       Wating for all processors to finish  
       Finding averages 
@@ -51,7 +51,7 @@ None
    Average box density j  0.00191422836672  atoms/angstrom^3 
    Average cut-off sphere density  0.00911480359087  atoms/angstrom^3 
 
-  Finished time  2014-09-29 14:44:48.940364
+  Finished time  2014-09-29 15:37:06.874377
   Computation time 0 min 0 seconds 
 ParallelMsgr destructor called
  

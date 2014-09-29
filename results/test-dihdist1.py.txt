@@ -25,7 +25,7 @@ None
   build_nablist dt  0 5
   list creation finished 
 
-  Date 2014-09-29 14:56:54.508959 
+  Date 2014-09-29 15:31:38.801823 
   Number of processors  1 
 ---------------------------------------------------------------------
   Particles of group l: 15 
@@ -47,8 +47,8 @@ proc 1  analysis of frame 1 on processor 1   box from min max 47.099043
 # bin index ; cnt    ; cnt/Total_cnts  
 sum_check  9.0
 
-  Finished time  2014-09-29 14:56:59.922773
-  Computation time 0 min 5 seconds 
+  Finished time  2014-09-29 15:31:44.412299
+  Computation time 0 min 6 seconds 
 ParallelMsgr destructor called
  
 Cleaning structureContainer
