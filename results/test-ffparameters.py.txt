@@ -1,0 +1,14 @@
+ LJ paramters have been read in 
+ LJ  CA  epsilon 0.500000 sigma 1.040000 
+ Bonds have been read in 
+ bond  CA - CB type harmonic 
+  harmonic r_0 = 1.050000 K = 100.000000 
+ Angles have been read in 
+ angle  CC - CA - CB type harmonic 
+  harmonic theta_0 = 0.000000 K = 1.200000 
+ Dihedrals have been read in 
+ dihedral  CD - CA - CB - CC type opls 
+ dihedral  HD - CA - CB - HC type harmonic 
+  harmonic d = 1.000000 mult = 0.000000 K = 0.000000 theat_s = 0.000000 
+ dihedral  HD - CA - CB - S type harmonic 
+  harmonic d = 1.000000 mult = 0.000000 K = 0.000000 theat_s = 0.000000 

@@ -1,23 +1,22 @@
  
 Base class ParallelMsgr constructor called
-Derived class MsgrBoost constructor called
-I am process 0 of 1.
-Found boost.mpi module 
+Derived class MsgrSerial constructor called
+No mpi module found, will use serial. 
 
-     - Reading in  acc1_D1_R2R200_A2_R3_n1_R41n1R41n1R40n1__n5.json
+     LAMMPS data file  D1_R2R200_A2_R3_n1_R41n1R41n1R40n1__n5.data
  Filter input by  {}
   Particles 507 
-    Volume 1000000.000000 
+    Volume 8000000.000000 
     Mass 3542.341000 
-    Density 0.003542 
+    Density 0.000443 
   Lattice vectors 
-    v_i  [ 100.    0.    0.]
-    v_j  [   0.  100.    0.]
-    v_k  [   0.    0.  100.]
+    v_i  [ 200.    0.    0.]
+    v_j  [   0.  200.    0.]
+    v_k  [   0.    0.  200.]
   Bonds 531 
 None
 
-  Date 2014-08-20 17:41:53.816362 
+  Date 2014-09-29 15:45:25.421182 
   Number of processors  1 
   Particles in filtered structure : 507 
 ---------------------------------------------------------------------
@@ -25,11 +24,12 @@ None
      Initial frame  0 
      Step frame  1  
      Final frame  10000  
-     - Writing   n5.xyz
+     - Writing   trans_n5.xyz
  
 
-  Computation time 0 min 0 seconds 
+  Computation time 0 min 1 seconds 
 ParallelMsgr destructor called
  
 Cleaning structureContainer
 Cleaning structureContainer
+python ../tools/scripts/translate.py  -v --in_data D1_R2R200_A2_R3_n1_R41n1R41n1R40n1__n5.data     --out_xyz trans_n5.xyz  
