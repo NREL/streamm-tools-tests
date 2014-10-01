@@ -9,6 +9,5 @@ if (toolsPath == None):
 
 run_py="python " + toolsPath + "/scripts/dihdist.py  --in_data D1_R2R200_A2_R3_n1_R41n1R41n1R40n1__n5.data   --frame_o 0      --frame_step 1    --in_lammpsxyz n5.xyz   --symb_k 'S'   --symb_i 'C'   --symb_j 'C' --symb_l 'S' -v "
 
-print run_py
 os.system(run_py)
 

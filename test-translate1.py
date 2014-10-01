@@ -9,6 +9,4 @@ if (toolsPath == None):
 
 run_py="python " + toolsPath + "/scripts/translate.py  -v --in_data D1_R2R200_A2_R3_n1_R41n1R41n1R40n1__n5.data     --out_xyz trans_n5.xyz  "
 
-print run_py
-
 os.system(run_py)

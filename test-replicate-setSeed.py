@@ -8,7 +8,7 @@ if (toolsPath == None):
     sys.exit(0)
 
 run_py="python " + toolsPath + "/scripts/replicate.py --fixed_rnd_seed --gro SOL.gro --top SOL.top   --sol_gro SOL.gro   --sol_top SOL.top   --den_target 0.1  --atoms_target 200    --perc_sol 50 -v "
-print run_py
+
 os.system(run_py)
 
 
