@@ -1,8 +1,7 @@
  
 Base class ParallelMsgr constructor called
-Derived class MsgrMPI4PY constructor called
-I am process 0 of 1.
-Found mpi4py module 
+Derived class MsgrSerial constructor called
+No mpi module found, will use serial. 
 
      LAMMPS data file  D1_R2R200_A2_R3_n1_R41n1R41n1R40n1__n5.data
   Particles 507 
@@ -23,10 +22,9 @@ None
   searching finished 
   Creating list of atomic indies of dihedrals 
  search finished 
-  build_nablist dt  1 115.0
   list creation finished 
 
-  Date 2014-09-29 16:34:59.621544 
+  Date 2014-10-02 14:06:53.998278 
   Number of processors  1 
 ---------------------------------------------------------------------
   Particles of group l: 15 
@@ -48,9 +46,8 @@ proc 1  analysis of frame 1 on processor 1   box from min max 47.099043
 # bin index ; cnt    ; cnt/Total_cnts  
 sum_check  9.0
 
-  Finished time  2014-09-29 16:35:04.459225
-  Computation time 1 min 55.0 seconds 
+  Finished time  2014-10-02 14:06:59.669875
+  Computation time 0 min 6 seconds 
 ParallelMsgr destructor called
  
 Cleaning structureContainer
-python ../tools/scripts/dihdist.py  --in_data D1_R2R200_A2_R3_n1_R41n1R41n1R40n1__n5.data   --frame_o 0      --frame_step 1    --in_lammpsxyz n5.xyz   --symb_k 'S'   --symb_i 'C'   --symb_j 'C' --symb_l 'S' -v 

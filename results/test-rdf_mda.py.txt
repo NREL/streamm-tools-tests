@@ -1,8 +1,7 @@
  
 Base class ParallelMsgr constructor called
-Derived class MsgrMPI4PY constructor called
-I am process 0 of 1.
-Found mpi4py module 
+Derived class MsgrSerial constructor called
+No mpi module found, will use serial. 
 
 
 ---------------------------------------------------------------------
@@ -10,6 +9,7 @@ Found mpi4py module
 ---------------------------------------------------------------------
      GROMACS .gro file  EQ_1.gro
      GROMACS .top file  PTMA.top
+  Reading  EQ_1.xtc and EQ_1.gro 
   Particles 992 
     Volume 125000.000000 
     Mass 6229.843600 
@@ -22,9 +22,12 @@ Found mpi4py module
 None
  Searching group i  {'fftype': ['NN']}
  Searching group j  {'fftype': ['NN']}
+ mdanalysis groups 
+    uni_i  24 
+    uni_j  24 
  search finished 
 
-  Date 2014-09-29 16:35:22.891103 
+  Date 2014-10-02 14:08:16.526328 
   Number of processors  1 
   Particles of group i: 24 
 ---------------------------------------------------------------------
@@ -40,9 +43,6 @@ None
      Step frame  10  
      Final frame  10000  
   Reading  EQ_1.xtc and EQ_1.gro 
- mdanalysis groups 
-    uni_i  24 
-    uni_j  24 
 Frame   10 with volume 125000.000000 
 Frame   20 with volume 125000.000000 
 Frame   30 with volume 125000.000000 
@@ -57,14 +57,14 @@ Frame  100 with volume 125000.000000
       Finding averages 
    Frames  10
    Total counts  576.0
-   Average box volume  12500.0
+   Average box volume  125000.0
    Volume of cut-off sphere  4188.79020479
-   Average box density i  0.00192  atoms/angstrom^3 
-   Average box density j  0.00192  atoms/angstrom^3 
+   Average box density i  0.000192  atoms/angstrom^3 
+   Average box density j  0.000192  atoms/angstrom^3 
    Average cut-off sphere density  0.000572957795131  atoms/angstrom^3 
 
-  Finished time  2014-09-29 16:35:23.222770
-  Computation time 0 min 1 seconds 
-Cleaning structureContainer
+  Finished time  2014-10-02 14:08:16.939930
+  Computation time 0 min 0 seconds 
 ParallelMsgr destructor called
  
+Cleaning structureContainer

@@ -1,8 +1,7 @@
  
 Base class ParallelMsgr constructor called
-Derived class MsgrMPI4PY constructor called
-I am process 0 of 1.
-Found mpi4py module 
+Derived class MsgrSerial constructor called
+No mpi module found, will use serial. 
 
      LAMMPS data file  D1_R2R200_A2_R3_n1_R41n1R41n1R40n1__n5.data
   Particles 507 
@@ -19,7 +18,7 @@ None
  Searching group j  {'symbol': ['C']}
  search finished 
 
-  Date 2014-09-29 16:35:52.240530 
+  Date 2014-10-02 13:57:50.753349 
   Number of processors  1 
   Particles of group i: 200 
 ---------------------------------------------------------------------
@@ -52,8 +51,8 @@ None
    Average box density j  0.00191422836672  atoms/angstrom^3 
    Average cut-off sphere density  0.00911480359087  atoms/angstrom^3 
 
-  Finished time  2014-09-29 16:35:53.046948
-  Computation time 0 min 1 seconds 
+  Finished time  2014-10-02 13:57:51.652428
+  Computation time 0 min 0 seconds 
 ParallelMsgr destructor called
  
 Cleaning structureContainer

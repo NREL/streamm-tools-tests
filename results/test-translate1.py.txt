@@ -1,8 +1,7 @@
  
 Base class ParallelMsgr constructor called
-Derived class MsgrMPI4PY constructor called
-I am process 0 of 1.
-Found mpi4py module 
+Derived class MsgrSerial constructor called
+No mpi module found, will use serial. 
 
      LAMMPS data file  D1_R2R200_A2_R3_n1_R41n1R41n1R40n1__n5.data
  Filter input by  {}
@@ -17,7 +16,7 @@ Found mpi4py module
   Bonds 531 
 None
 
-  Date 2014-09-29 16:37:47.896699 
+  Date 2014-10-02 14:09:40.928445 
   Number of processors  1 
   Particles in filtered structure : 507 
 ---------------------------------------------------------------------
@@ -33,4 +32,3 @@ ParallelMsgr destructor called
  
 Cleaning structureContainer
 Cleaning structureContainer
-python ../tools/scripts/translate.py  -v --in_data D1_R2R200_A2_R3_n1_R41n1R41n1R40n1__n5.data     --out_xyz trans_n5.xyz  
