@@ -10,6 +10,19 @@ Found mpi4py module
 ---------------------------------------------------------------------
      GROMACS .gro file  EQ_1.gro
      GROMACS .top file  PTMA.top
+      Including  ff-new.itp
+      Molecule types found  1
+          1 MOL
+      Total molecule types in system  1
+          1 MOL 1
+      Total molecules  1
+      Molecule id  MOL
+         atoms  0 991
+         bonds  0 1014
+         angles  0 1979
+         dihedrals  0 3056
+         will be repeated  1  times 
+Exisiting particles will updated with top information 
   Reading  EQ_1.xtc and EQ_1.gro 
   Particles 992 
     Volume 125000.000000 
@@ -22,13 +35,15 @@ Found mpi4py module
   Bonds 1015 
 None
  Searching group i  {'fftype': ['NN']}
+   patricles group i  24
  Searching group j  {'fftype': ['NN']}
+   patricles group j  24
  mdanalysis groups 
     uni_i  24 
     uni_j  24 
  search finished 
 
-  Date 2014-10-02 17:06:50.197450 
+  Date 2014-10-09 12:09:52.186256 
   Number of processors  1 
   Particles of group i: 24 
 ---------------------------------------------------------------------
@@ -64,7 +79,7 @@ Frame  100 with volume 125000.000000
    Average box density j  0.000192  atoms/angstrom^3 
    Average cut-off sphere density  0.000572957795131  atoms/angstrom^3 
 
-  Finished time  2014-10-02 17:06:50.521753
+  Finished time  2014-10-09 12:09:52.545665
   Computation time 0 min 0 seconds 
 ParallelMsgr destructor called
  

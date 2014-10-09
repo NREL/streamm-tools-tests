@@ -8,6 +8,7 @@
   harmonic theta_0 = 0.000000 K = 1.200000 
  Dihedrals have been read in 
  dihedral  CD - CA - CB - CC type opls 
+  k1 = 3.300000 k2 = 0.000000 k3 = -2.300000 k4 = 0.000000 
  dihedral  HD - CA - CB - HC type harmonic 
   harmonic d = 1.000000 mult = 0.000000 K = 0.000000 theat_s = 0.000000 
  dihedral  HD - CA - CB - S type harmonic 
