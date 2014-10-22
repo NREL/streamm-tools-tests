@@ -1,7 +1,3 @@
-************************************************************************************
- This test shows structureContainer functionality with angles included
-************************************************************************************ 
-
 
  Cleaning memory for initial objects 
 

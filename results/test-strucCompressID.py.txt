@@ -1,7 +1,3 @@
-************************************************************************************
- This test shows how to add StructureContainer objects together 
-************************************************************************************ 
-
 
  Cleaning memory for initial objects 
 
