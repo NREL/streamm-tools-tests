@@ -12,9 +12,8 @@ from bonds import BondContainer
 
 from structureContainer import StructureContainer
 
-
 print "************************************************************************************"
-print " This test shows how to add StructureContainer objects together "
+print " This test shows how reorder (compress) global IDs for a StructureContainer "
 print "************************************************************************************ \n"
 
 p1 = Particle( [0.2, 1.3,  33.0], "Si", 2.0, 1.23)

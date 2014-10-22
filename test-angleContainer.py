@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+## #!/usr/bin/env python
 """
 Class data structures for atomic data
 """
@@ -12,7 +12,6 @@ from bonds import BondContainer
 
 from angles import Angle
 from angles import AngleContainer
-
 
 print "************************************************************************************"
 print " This test shows various operators within Angle and AngleContainer classes          "

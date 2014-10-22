@@ -15,9 +15,8 @@ from angles import AngleContainer
 
 from structureContainer import StructureContainer
 
-
 print "************************************************************************************"
-print " This test shows structureContainer functionality with angles included"
+print " This test shows compressing IDs when structureContainer has angles included"
 print "************************************************************************************ \n"
 
 p1 = Particle( [1.1, 1.1, 1.1], "Si", 2.0, 1.23)
