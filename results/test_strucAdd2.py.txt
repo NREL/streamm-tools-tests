@@ -26,8 +26,8 @@ polymer1 =
 3 {'position': [3.3, 3.3, 3.3], 'charge': 1.0, 'type': 'C', 'mass': 2.34, 'tagsDict': {'type': 'C'}}
 
  Contains bond objects: 
-1 {'type': 'hooke', 'length': 1.111, 'pgid1': 1, 'pgid2': 2}
-2 {'type': 'hooke', 'length': 2.222, 'pgid1': 2, 'pgid2': 3}
+1 {'g_indx': 0, 'length': 1.111, 'pgid1': 1, 'pgid2': 2, 'type': 'hooke', 'lmpindx': 0}
+2 {'g_indx': 0, 'length': 2.222, 'pgid1': 2, 'pgid2': 3, 'type': 'hooke', 'lmpindx': 0}
 
  Contains angle objects: 
 
@@ -51,7 +51,7 @@ polymer2 =
 2 {'position': [2.22, 2.22, 2.22], 'charge': 2.0, 'type': 'Ar', 'mass': 2.34, 'tagsDict': {'type': 'Ar'}}
 
  Contains bond objects: 
-1 {'type': 'hooke-2', 'length': 1.1, 'pgid1': 1, 'pgid2': 2}
+1 {'g_indx': 0, 'length': 1.1, 'pgid1': 1, 'pgid2': 2, 'type': 'hooke-2', 'lmpindx': 0}
 
  Contains angle objects: 
 
@@ -80,9 +80,9 @@ polymer2 =
 6 {'position': [3.3, 3.3, 3.3], 'charge': 1.0, 'type': 'C', 'mass': 2.34, 'tagsDict': {'type': 'C'}}
 
  Contains bond objects: 
-1 {'type': 'hooke-2', 'length': 1.1, 'pgid1': 1, 'pgid2': 2}
-3 {'type': 'hooke', 'length': 1.111, 'pgid1': 4, 'pgid2': 5}
-4 {'type': 'hooke', 'length': 2.222, 'pgid1': 5, 'pgid2': 6}
+1 {'g_indx': 0, 'length': 1.1, 'pgid1': 1, 'pgid2': 2, 'type': 'hooke-2', 'lmpindx': 0}
+3 {'g_indx': 0, 'length': 1.111, 'pgid1': 4, 'pgid2': 5, 'type': 'hooke', 'lmpindx': 0}
+4 {'g_indx': 0, 'length': 2.222, 'pgid1': 5, 'pgid2': 6, 'type': 'hooke', 'lmpindx': 0}
 
  Contains angle objects: 
 

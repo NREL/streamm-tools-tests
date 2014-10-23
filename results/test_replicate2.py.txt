@@ -245,6 +245,7 @@ Cleaning structureContainer
              lat vec 2  [  0.          28.22946404   0.        ]
              lat vec 3  [  0.           0.          28.22946404]
 Cleaning structureContainer
+     - Writing   ./replicate.gro
 ParallelMsgr destructor called
  
 Cleaning structureContainer

@@ -4,13 +4,13 @@
 angles1 container
 
  Contains angle objects: 
-1 {'type': 'harmonic', 'theta0': 1.11, 'pgid1': 1, 'pgid3': 3, 'pgid2': 2}
+1 {'g_indx': 0, 'theta0': 1.11, 'pgid1': 1, 'pgid3': 3, 'pgid2': 2, 'type': 'harmonic', 'lmpindx': 0}
 
  
 angles2 container
 
  Contains angle objects: 
-1 {'type': 'harmonic', 'theta0': 2.22, 'pgid1': 1, 'pgid3': 3, 'pgid2': 2}
+1 {'g_indx': 0, 'theta0': 2.22, 'pgid1': 1, 'pgid3': 3, 'pgid2': 2, 'type': 'harmonic', 'lmpindx': 0}
 
 Testing 'in' operator (1 in angles1)
 angles1 contains gid 1
@@ -20,8 +20,8 @@ key not found in angles1
 Will print the new angles1 after adding angles1 += angles2
 
  Contains angle objects: 
-1 {'type': 'harmonic', 'theta0': 1.11, 'pgid1': 1, 'pgid3': 3, 'pgid2': 2}
-2 {'type': 'harmonic', 'theta0': 2.22, 'pgid1': 1, 'pgid3': 3, 'pgid2': 2}
+1 {'g_indx': 0, 'theta0': 1.11, 'pgid1': 1, 'pgid3': 3, 'pgid2': 2, 'type': 'harmonic', 'lmpindx': 0}
+2 {'g_indx': 0, 'theta0': 2.22, 'pgid1': 1, 'pgid3': 3, 'pgid2': 2, 'type': 'harmonic', 'lmpindx': 0}
 
 Check for pre-existing angle
 angle 1--2--3 exists

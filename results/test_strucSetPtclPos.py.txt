@@ -23,10 +23,10 @@ Initial state of structure before reset
 4 {'position': [0.0, 2.3, -20.1], 'charge': 1.0, 'type': 'C', 'mass': 2.34, 'tagsDict': {'type': 'C'}}
 
  Contains bond objects: 
-1 {'type': 'hooke', 'length': 1.233, 'pgid1': 1, 'pgid2': 2}
-2 {'type': 'hooke', 'length': 0.5, 'pgid1': 2, 'pgid2': 3}
-3 {'type': 'hooke', 'length': 2.301, 'pgid1': 3, 'pgid2': 4}
-4 {'type': 'hooke', 'length': 0.828, 'pgid1': 1, 'pgid2': 3}
+1 {'g_indx': 0, 'length': 1.233, 'pgid1': 1, 'pgid2': 2, 'type': 'hooke', 'lmpindx': 0}
+2 {'g_indx': 0, 'length': 0.5, 'pgid1': 2, 'pgid2': 3, 'type': 'hooke', 'lmpindx': 0}
+3 {'g_indx': 0, 'length': 2.301, 'pgid1': 3, 'pgid2': 4, 'type': 'hooke', 'lmpindx': 0}
+4 {'g_indx': 0, 'length': 0.828, 'pgid1': 1, 'pgid2': 3, 'type': 'hooke', 'lmpindx': 0}
 
  Contains angle objects: 
 
@@ -55,10 +55,10 @@ After position reset/get
 4 {'position': [0.444, 0.555, 0.666], 'charge': 1.0, 'type': 'C', 'mass': 2.34, 'tagsDict': {'type': 'C'}}
 
  Contains bond objects: 
-1 {'type': 'hooke', 'length': 1.233, 'pgid1': 1, 'pgid2': 2}
-2 {'type': 'hooke', 'length': 0.5, 'pgid1': 2, 'pgid2': 3}
-3 {'type': 'hooke', 'length': 2.301, 'pgid1': 3, 'pgid2': 4}
-4 {'type': 'hooke', 'length': 0.828, 'pgid1': 1, 'pgid2': 3}
+1 {'g_indx': 0, 'length': 1.233, 'pgid1': 1, 'pgid2': 2, 'type': 'hooke', 'lmpindx': 0}
+2 {'g_indx': 0, 'length': 0.5, 'pgid1': 2, 'pgid2': 3, 'type': 'hooke', 'lmpindx': 0}
+3 {'g_indx': 0, 'length': 2.301, 'pgid1': 3, 'pgid2': 4, 'type': 'hooke', 'lmpindx': 0}
+4 {'g_indx': 0, 'length': 0.828, 'pgid1': 1, 'pgid2': 3, 'type': 'hooke', 'lmpindx': 0}
 
  Contains angle objects: 
 

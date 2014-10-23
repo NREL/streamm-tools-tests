@@ -2,14 +2,14 @@
  LJ  CA  epsilon 0.500000 sigma 1.040000 
  Bonds have been read in 
  bond  CA - CB type harmonic 
-  harmonic r_0 = 1.050000 K = 100.000000 
+  harmonic r_0 = 1.050000 K = 100.000000 lammps index 0  gromcas index 0  
  Angles have been read in 
  angle  CC - CA - CB type harmonic 
-  harmonic theta_0 = 0.000000 K = 1.200000 
+  harmonic theta_0 = 0.000000 K = 1.200000 lammps index 0  gromcas index 0  
  Dihedrals have been read in 
  dihedral  CD - CA - CB - CC type opls 
-  k1 = 3.300000 k2 = 0.000000 k3 = -2.300000 k4 = 0.000000 
+  k1 = 3.300000 k2 = 0.000000 k3 = -2.300000 k4 = 0.000000 lammps index 0  gromcas index 0 
  dihedral  HD - CA - CB - HC type harmonic 
-  harmonic d = 1.000000 mult = 0.000000 K = 0.000000 theat_s = 0.000000 
+  harmonic d = 1.000000 mult = 0.000000 K = 0.000000 theat_s = 0.000000 lammps index 0  gromcas index 0 
  dihedral  HD - CA - CB - S type harmonic 
-  harmonic d = 1.000000 mult = 0.000000 K = 0.000000 theat_s = 0.000000 
+  harmonic d = 1.000000 mult = 0.000000 K = 0.000000 theat_s = 0.000000 lammps index 0  gromcas index 0 
