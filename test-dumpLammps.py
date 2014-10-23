@@ -240,7 +240,7 @@ def isPtInLayer(pt, layerPos, layerDir, width=0.0):
         return False
 
 
-def setQDNeighbors(localList, globalList, cutoff_dist, bcLs):
+def setQDNeighbors(localList, globalList, cutoff_dist, bcLs, rank, size):
     """
     Calculate N^2 distances on multiple processors and parse out neighbor graph info
 
@@ -364,154 +364,164 @@ def setQDNeighbors(localList, globalList, cutoff_dist, bcLs):
     return allDist, allNeighbors, numTotalNeighbors, allBonds
 
 
-
-# Get useful methods
-g=Geometry()
-
-# Get comm object
-p = mpiNREL.getMPISerialObject()
-rank = p.getRank()
-size = p.getCommSize()
-
-# Sync random stream for tests
-random.seed(0)
-
-#############################################################################################
-#
-# Generate list of  [gid, x,y,z] points ---> allPoints list
-# copied on all processors. # Global pt index included
-# UNITS distance --> A [0.1 nm]
-#
-#############################################################################################
-
-rad_avg = 15.0     # Moving to use this to make
-rad_sig = 0.025    # initial cubic grid thats used to pass to MD
-ptcl_dist = 10.0   # 
-
-# NOTE: this is an arbitrary choice
-cutoff_dist   = math.sqrt(2)*((2.00 * rad_avg) + ptcl_dist)
-nQD_spacing   = (2.00 * rad_avg) + ptcl_dist
-
-# Makes number of points along side grid
-nQDs = [5, 5, 5]
-sysLs = setSystemSizes(nQDs, nQD_spacing)
-
-# Set boundary condition list (used in PBC calc)
-xL = sysLs[0]
-yL = sysLs[1]
-zL = sysLs[2]
-bcLs = [0.0, yL[1]-yL[0], zL[1]-zL[0] ] # x is NOT PB
-
-# Status info
-if rank == 0:
-    print "rad_avg     = ", rad_avg
-    print "rad_sig     = ", rad_sig
-    print "cutoff_dist = ", cutoff_dist
-    print " "
-    print "bcLs  = ", bcLs
-    print "sysLs = ", sysLs
-    print " "
-
-#############################################################################################
-# Generate initial points
-
-p.barrier()
-
-tmpPoints = setRandomGridPoints(nQDs, rad_avg, ptcl_dist) # Generate global pts lst
-allPoints = p.bcast(tmpPoints)                            # ensures rand pts same across procs
-
-numpoints = len(allPoints) # Total number of points (for diag)
-if numpoints == 0:
-    print "Number of points generated == 0"
-    sys.exit(3)
-
-myPoints  = p.splitListOnProcs(allPoints) # Split elements on across processors
-p.barrier()
-#############################################################################################
-
-
-###################################################################
-# Store particles in struc and find neighbors/bonds
-# ptPos includes index eg. [1, 3.4, 1.2, -2.0]
+def main():
+    """
+    Tests a specifc workflow for LAMMPS that uses the simulationLAMMPS1 derived class
+    """
+    global g
+    global p
     
-nanoPtcls = ParticleContainer()
-nanoBonds = BondContainer()
+    # Get useful methods
+    g=Geometry()
 
-for ptPos in allPoints:
+    # Get comm object
+    p = mpiNREL.getMPISerialObject()
+    rank = p.getRank()
+    size = p.getCommSize()
 
-    axisLoc = [bcLs[1]/2.0, bcLs[2]/2.0]
-    cylinderRadius = 120.0
-    inside  = isPtInCylinder(ptPos[1:], axisLoc, "yz", cylinderRadius)
-    
-    if inside:
-        pt = Particle(ptPos[1:], type="QDbig",   mass=2.0)
-        tagsD = {"molnum":1, "QDSizeAvg":20.0}
+    # Sync random stream for tests
+    random.seed(0)
+
+    #############################################################################################
+    #
+    # Generate list of  [gid, x,y,z] points ---> allPoints list
+    # copied on all processors. # Global pt index included
+    # UNITS distance --> A [0.1 nm]
+    #
+    #############################################################################################
+
+    rad_avg = 15.0     # Moving to use this to make
+    rad_sig = 0.025    # initial cubic grid thats used to pass to MD
+    ptcl_dist = 10.0   # 
+
+    # NOTE: this is an arbitrary choice
+    cutoff_dist   = math.sqrt(2)*((2.00 * rad_avg) + ptcl_dist)
+    nQD_spacing   = (2.00 * rad_avg) + ptcl_dist
+
+    # Makes number of points along side grid
+    nQDs = [5, 5, 5]
+    sysLs = setSystemSizes(nQDs, nQD_spacing)
+
+    # Set boundary condition list (used in PBC calc)
+    xL = sysLs[0]
+    yL = sysLs[1]
+    zL = sysLs[2]
+    bcLs = [0.0, yL[1]-yL[0], zL[1]-zL[0] ] # x is NOT PB
+
+    # Status info
+    if rank == 0:
+        print "rad_avg     = ", rad_avg
+        print "rad_sig     = ", rad_sig
+        print "cutoff_dist = ", cutoff_dist
+        print " "
+        print "bcLs  = ", bcLs
+        print "sysLs = ", sysLs
+        print " "
+
+    #############################################################################################
+    # Generate initial points
+
+    p.barrier()
+
+    tmpPoints = setRandomGridPoints(nQDs, rad_avg, ptcl_dist) # Generate global pts lst
+    allPoints = p.bcast(tmpPoints)                            # ensures rand pts same across procs
+
+    numpoints = len(allPoints) # Total number of points (for diag)
+    if numpoints == 0:
+        print "Number of points generated == 0"
+        sys.exit(3)
+
+    myPoints  = p.splitListOnProcs(allPoints) # Split elements on across processors
+    p.barrier()
+    #############################################################################################
+
+
+    ###################################################################
+    # Store particles in struc and find neighbors/bonds
+    # ptPos includes index eg. [1, 3.4, 1.2, -2.0]
+
+    nanoPtcls = ParticleContainer()
+    nanoBonds = BondContainer()
+
+    for ptPos in allPoints:
+
+        axisLoc = [bcLs[1]/2.0, bcLs[2]/2.0]
+        cylinderRadius = 120.0
+        inside  = isPtInCylinder(ptPos[1:], axisLoc, "yz", cylinderRadius)
+
+        if inside:
+            pt = Particle(ptPos[1:], type="QDbig",   mass=2.0)
+            tagsD = {"molnum":1, "QDSizeAvg":20.0}
+        else:
+            pt = Particle(ptPos[1:], type="QDsmall", mass=1.0)
+            tagsD = {"molnum":1, "QDSizeAvg":15.0}
+
+        pt.setTagsDict(tagsD)
+        nanoPtcls.put(pt)
+
+    p.barrier()
+
+    # Get bond info
+    allDist, allNeighbors, numTotalNeighbors, allBonds = \
+          setQDNeighbors(myPoints, allPoints, cutoff_dist, bcLs, rank, size)
+
+    if rank == 0:
+        print "Begin building bond container"
+
+    # Put bonds into container
+    for bond in allBonds:
+
+        if not nanoBonds.hasBond(bond):                   # Check if bond is unique
+            bnd = Bond(bond[0], bond[1], type="normBond") # Put into STREAMM object
+            nanoBonds.put(bnd)                            # add if not in container
+
+    p.barrier()
+
+    if rank == 0:
+        print "length of bond container = ", len(nanoBonds)
+    ###############################################################################
+
+
+    ############################################################################
+    # Write LAMMPS file with atoms/bonds
+
+    strucQD = StructureContainer(nanoPtcls, nanoBonds)
+    simObjQD = SimulationLAMMPS1("LammpsAug14", verbose=False)
+    simObjQD.setStructureContainer(strucQD)
+
+    if isinstance(simObjQD, SimulationLAMMPS1):
+        print "strucQD is a SimulationLAMMPS1"
     else:
-        pt = Particle(ptPos[1:], type="QDsmall", mass=1.0)
-        tagsD = {"molnum":1, "QDSizeAvg":15.0}
-
-    pt.setTagsDict(tagsD)
-    nanoPtcls.put(pt)
-
-p.barrier()
-
-# Get bond info
-allDist, allNeighbors, numTotalNeighbors, allBonds = \
-      setQDNeighbors(myPoints, allPoints, cutoff_dist, bcLs)
-
-if rank == 0:
-    print "Begin building bond container"
-
-# Put bonds into container
-for bond in allBonds:
-    
-    if not nanoBonds.hasBond(bond):                   # Check if bond is unique
-        bnd = Bond(bond[0], bond[1], type="normBond") # Put into STREAMM object
-        nanoBonds.put(bnd)                            # add if not in container
-
-p.barrier()
-
-if rank == 0:
-    print "length of bond container = ", len(nanoBonds)
-###############################################################################
+        print "strucQD is NOT a SimulationLAMMPS1"
 
 
-############################################################################
-# Write LAMMPS file with atoms/bonds
+    boxSizes = sysLs
+    strucQD.setBoxLengths(boxSizes)
 
-strucQD = StructureContainer(nanoPtcls, nanoBonds)
-simObjQD = SimulationLAMMPS1("LammpsAug14", verbose=False)
-simObjQD.setStructureContainer(strucQD)
-
-if isinstance(simObjQD, SimulationLAMMPS1):
-    print "strucQD is a SimulationLAMMPS1"
-else:
-    print "strucQD is NOT a SimulationLAMMPS1"
+    small_rad_avg   = 15.0
+    big_bond_min    =  (2.0*      rad_avg) + ptcl_dist
+    small_sigma_min = ((2.0*small_rad_avg) + ptcl_dist) / pow(2, 1/6.)
+    big_sigma_min   = ((2.0*      rad_avg) + ptcl_dist) / pow(2, 1/6.)
 
 
-boxSizes = sysLs
-strucQD.setBoxLengths(boxSizes)
+    ptclParamMap = {("QDsmall", "epsilon"):1.0, ("QDsmall", "sigma"):small_sigma_min,
+                     ("QDbig",   "epsilon"):1.0, ("QDbig",  "sigma"):big_sigma_min}
 
-small_rad_avg   = 15.0
-big_bond_min    =  (2.0*      rad_avg) + ptcl_dist
-small_sigma_min = ((2.0*small_rad_avg) + ptcl_dist) / pow(2, 1/6.)
-big_sigma_min   = ((2.0*      rad_avg) + ptcl_dist) / pow(2, 1/6.)
+    # Just one bond type for now
+    bondParamMap = {("normBond", "Kenergy"):1.0, ("normBond", "r0"):big_bond_min}
+
+    if rank == 0:
+        # nanoPtcls.scatterPlot()
+        # strucQD.dumpLammpsInputFile("qd.data", ptclParamMap, bondParamMap)
+        # strucQD.writeInput("qd.data", ptclParamMap, bondParamMap)
+        # simObjQD.writeInput("qd.data", ptclParamMap, bondParamMap)
+        simObjQD.setCoeffs(ptclParamMap, bondParamMap)
+        simObjQD.writeInput("qd.data")
+
+    # For format of test check
+    os.system("cat qd.data")
+    ############################################################################
 
 
-ptclParamMap = {("QDsmall", "epsilon"):1.0, ("QDsmall", "sigma"):small_sigma_min,
-                 ("QDbig",   "epsilon"):1.0, ("QDbig",  "sigma"):big_sigma_min}
-
-# Just one bond type for now
-bondParamMap = {("normBond", "Kenergy"):1.0, ("normBond", "r0"):big_bond_min}
-
-if rank == 0:
-    # nanoPtcls.scatterPlot()
-    # strucQD.dumpLammpsInputFile("qd.data", ptclParamMap, bondParamMap)
-    # strucQD.writeInput("qd.data", ptclParamMap, bondParamMap)
-    # simObjQD.writeInput("qd.data", ptclParamMap, bondParamMap)
-    simObjQD.setCoeffs(ptclParamMap, bondParamMap)
-    simObjQD.writeInput("qd.data")
-
-# For format of test check
-os.system("cat qd.data")
-############################################################################
+if __name__ == '__main__':
+    main()

@@ -1,5 +1,6 @@
 ************************************************************************************
- This test shows how to save/dump/restore state of structureContainers using pickle
+ This test shows how the setPtclPos method works to externally set all particle 
+ positions from a list
 ************************************************************************************ 
 
 Initial state of structure before reset  

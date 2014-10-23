@@ -1,5 +1,5 @@
 ************************************************************************************
- This test shows structureContainer functionality with angles included
+ This test shows structureContainer functionality with dihedrals included
 ************************************************************************************ 
 
 

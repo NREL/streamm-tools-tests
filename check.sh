@@ -204,7 +204,7 @@ elif [ $1 == "clean" ]; then
     echo " "
 
     rm -rf *.pkl qd*dat stats.txt qd.data trans.dat trans.log
-    rm -rf test_rdf.log test_rdf.dat
+    rm -rf test_rdf.log test_rdf.dat test*.pyc
     rm -rf replicate.gro replicate.json replicate.log replicate.xmol
     rm -rf test*.py.stat
 

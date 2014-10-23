@@ -1,7 +1,4 @@
 #!/usr/bin/env python
-"""
-Class data structures for atomic data
-"""
 import os, sys, math, random, time
 
 from particles import Particle
@@ -12,10 +9,6 @@ from bonds import BondContainer
 
 from structureContainer import StructureContainer
 
-
-print "************************************************************************************"
-print " This is a speed/memory test for adding StructureContainer objects together "
-print "************************************************************************************ \n"
 
 def runStrucAdd(numPtcls1, numPtcls2):
     """
@@ -104,14 +97,26 @@ def printTiming(timeTuple, fileObj):
     fileObj.write("--------------------------------------------- \n")
 
 
-timeTuple1 = runStrucAdd(100,  100)
-timeTuple2 = runStrucAdd(1000, 1000)
-timeTuple3 = runStrucAdd(5000, 5000)
-timeTuple4 = runStrucAdd(5000, 100)
 
-fobj = open("test-strucAddBig-timing.dat", 'w')
-printTiming(timeTuple1, fobj)
-printTiming(timeTuple2, fobj)
-printTiming(timeTuple3, fobj)
-printTiming(timeTuple4, fobj)
-fobj.close()
+
+
+def main():
+    print "************************************************************************************"
+    print " This is a speed/memory test for adding StructureContainer objects together "
+    print "************************************************************************************ \n"
+
+
+    timeTuple1 = runStrucAdd(100,  100)
+    timeTuple2 = runStrucAdd(1000, 1000)
+    timeTuple3 = runStrucAdd(5000, 5000)
+    timeTuple4 = runStrucAdd(5000, 100)
+
+    fobj = open("test-strucAddBig-timing.dat", 'w')
+    printTiming(timeTuple1, fobj)
+    printTiming(timeTuple2, fobj)
+    printTiming(timeTuple3, fobj)
+    printTiming(timeTuple4, fobj)
+    fobj.close()
+
+if __name__ == '__main__':
+    main()

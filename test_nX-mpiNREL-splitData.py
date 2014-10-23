@@ -10,9 +10,17 @@ def runSplitTest(np):
     os.system(cmdStr)
     # print "------------------------------------------------------------------\n"
 
-runSplitTest(1)
-runSplitTest(2)
-runSplitTest(6)
-runSplitTest(10)
-runSplitTest(11)
-runSplitTest(12)
+def main():
+    """
+    Driver for the splitTest.py module. Testing robustness of the list split
+    algorithm needed for MPI wrapper class
+    """
+    runSplitTest(1)
+    runSplitTest(2)
+    runSplitTest(6)
+    runSplitTest(10)
+    runSplitTest(11)
+    runSplitTest(12)
+
+if __name__ == '__main__':
+    main()
