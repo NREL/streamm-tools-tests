@@ -13,7 +13,7 @@ usage() {
     echo " "
     echo "To add a SERIAL test:"
     echo "   1. create test with name test-*.py "
-    echo "      Note: test-*.py is assumed to print results to screen \n"
+    echo "      Note: test_*.py is assumed to print results to screen \n"
     echo "   2. do 'check.sh compare' \n"
     echo "   3. double check that 'check.sh compare' gives no errors \n"
     echo "   4. do 'check.sh new' to put new results in /tools/tests/results \n"
@@ -21,8 +21,8 @@ usage() {
     echo " "
     echo " "
     echo "To add a PARALLEL (np = 2) test:"
-    echo "   1. create test with name test_n2-*.py "
-    echo "      Note: test-*.py is assumed to print results to screen \n"
+    echo "   1. create test with name test_n2_*.py "
+    echo "      Note: test_*.py is assumed to print results to screen \n"
     echo "   2. Repeat steps 2-5 for serial"
     echo " "
     echo " "
@@ -118,7 +118,7 @@ elif [ $1 == "new" ]; then
 
     echo " "
     echo "Checking in new results for python test files"
-    echo "Looking for tests named 'test-*.py'  "
+    echo "Looking for tests named 'test_*.py'  "
     echo " "
 
     echo "Proceed [y]yes [n]no"
@@ -130,14 +130,14 @@ elif [ $1 == "new" ]; then
     fi
 
     # Serial test
-    testNames=`ls -1 test-*.py`
+    testNames=`ls -1 test_*.py |grep -v test_n2 |grep -v test_nX`
     runCmd="python"
     for testName in $testNames; do
 	newTest $testName $runCmd
     done
 
     # Parallel test (np = 2)
-    testNames=`ls -1 test_n2-*.py`
+    testNames=`ls -1 test_n2_*.py`
     for testName in $testNames; do
 	newTest $testName ' mpirun -n 2'
     done
@@ -147,24 +147,24 @@ elif [ $1 == "all" ]; then
 
     echo " "
     echo "Comparing results against python test files"
-    echo "Looking for tests named 'test-*.py'  "
+    echo "Looking for tests named 'test_*.py'  "
     echo " " 
 
     # Serial test
-    testNames=`ls -1 test-*.py`
+    testNames=`ls -1 test_*.py |grep -v test_n2 |grep -v test_nX`
     runCmd="python "
     for testName in $testNames; do
 	compareTest $testName $runCmd
     done
 
     # Parallel test (np = 2)
-    testNames=`ls -1 test_n2-*.py`
+    testNames=`ls -1 test_n2_*.py`
     for testName in $testNames; do
 	compareTest $testName 'mpirun -n 2'
     done
 
     # Parallel test (series of parallel runs that are calling mpirun internally)
-    testNames=`ls -1 test_nX-*.py`
+    testNames=`ls -1 test_nX_*.py`
     for testName in $testNames; do
 	compareTest $testName
     done
