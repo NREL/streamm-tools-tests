@@ -1,6 +1,7 @@
-************************************************************************************
- Illustrates how a substructure method returns subgroup with all 4 types
-************************************************************************************ 
+**********************************************************************************************
+Illustrates how a substructure method returns subgroup with ONLY particle container included
+This is for speed considerations
+**********************************************************************************************
 
 ********************************************************** 
 
@@ -61,13 +62,32 @@ polymer1 Structure before returning sub-structure
 Testing polymer1.getSubParticleContainer([2,3,4])
    currently ID's are reassigned in substructure 
 
+getSubStructure including only ParticleContainer
+
+************************************* 
+ Global parameters: 
+************************************* 
+  Box lengths: 
+      Lx = [0.0, 1.0]
+      Ly = [0.0, 1.0]
+      Lz = [0.0, 1.0]
+
+************************************* 
+ Structure contains: 
+************************************* 
 
  Contains particle objects: 
 2 {'position': [2.2, 2.2, 2.2], 'charge': 1.0, 'type': 'Si', 'mass': 2.34, 'tagsDict': {'type': 'Si'}}
 3 {'position': [3.3, 3.3, 3.3], 'charge': 1.0, 'type': 'Si', 'mass': 2.34, 'tagsDict': {'type': 'Si'}}
 4 {'position': [4.4, 4.4, 4.4], 'charge': 1.0, 'type': 'Si', 'mass': 2.34, 'tagsDict': {'type': 'Si'}}
 
-A ParticleContainer is returned
+ Contains bond objects: 
+
+ Contains angle objects: 
+
+ Contains dihedral objects: 
+
 ********************************************************** 
 
+Cleaning structureContainer
 Cleaning structureContainer

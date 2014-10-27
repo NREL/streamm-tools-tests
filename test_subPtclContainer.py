@@ -41,11 +41,13 @@ from structureContainer import StructureContainer
 def main():
 
     """
-    Illustrates how a substructure method returns subgroup with all 4 types"
+    Illustrates how a substructure method returns subgroup with ONLY particle container included
+    This is for speed considerations
     """
-    print "************************************************************************************"
-    print " Illustrates how a substructure method returns subgroup with all 4 types"
-    print "************************************************************************************ \n"
+    print "**********************************************************************************************"
+    print "Illustrates how a substructure method returns subgroup with ONLY particle container included"
+    print "This is for speed considerations"
+    print "**********************************************************************************************\n"
 
     p1 = Particle( [1.1, 1.1, 1.1], "Si", 2.0, 1.23)
     p2 = Particle( [2.2, 2.2, 2.2], "Si",  1.0, 2.34)
@@ -133,14 +135,8 @@ def main():
     print "********************************************************** \n"
     print "Testing polymer1.getSubParticleContainer([2,3,4])"
     print "   currently ID's are reassigned in substructure \n"
-    subPtclC = polymer1.getSubParticleContainer([2,3,4])
+    subPtclC = polymer1.getSubStructure([2,3,4], particlesOnly=True)
     print subPtclC
-
-    if isinstance(subPtclC, ParticleContainer):
-        print "A ParticleContainer is returned"
-    else:
-        print "A ParticleContainer NOT returned"
-
     print "********************************************************** \n"
 
 
