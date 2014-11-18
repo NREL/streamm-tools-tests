@@ -9,124 +9,116 @@
 
 -------------------- Before adding --------------------
 polymer1 =  
-************************************* 
- Global parameters: 
-************************************* 
-  Box lengths: 
-      Lx = [0.0, 1.0]
-      Ly = [0.0, 1.0]
-      Lz = [0.0, 1.0]
+---------------------------------------------------------------------
+    Structure properties 
+---------------------------------------------------------------------
+      Box lengths: 
+        Lx (A) = [0.0, 1.0]
+        Ly (A) = [0.0, 1.0]
+        Lz (A) = [0.0, 1.0]
+      Volume 1000000.000000  A^3 
+      Mass 5.910000  AMU 
+      Density 0.000010 g/cm^3 
+      Lattice vectors 
+        v_i (A)  ( 100.000000 , 0.000000 , 0.000000 ) 
+        v_j (A)  ( 0.000000 , 100.000000 , 0.000000 ) 
+        v_k (A)  ( 0.000000 , 0.000000 , 100.000000 ) 
 
-************************************* 
- Structure contains: 
-************************************* 
-
- Contains particle objects: 
-1 {'position': [0.2, 1.3, 33.0], 'charge': 2.0, 'type': 'Si', 'mass': 1.23, 'tagsDict': {'type': 'Si'}}
-2 {'position': [5.0, 2.3, -22.1], 'charge': 1.0, 'type': 'C', 'mass': 2.34, 'tagsDict': {'type': 'C'}}
-3 {'position': [5.0, 2.3, -20.1], 'charge': 1.0, 'type': 'C', 'mass': 2.34, 'tagsDict': {'type': 'C'}}
-
- Contains bond objects: 
-
- Contains angle objects: 
-
- Contains dihedral objects: 
+      Particles 3 
+      Bonds  0 
+      Angles 0 
+      Dihedrals 0 
+      Impropers 0 
 
 polymer2 =  
-************************************* 
- Global parameters: 
-************************************* 
-  Box lengths: 
-      Lx = [0.0, 1.0]
-      Ly = [0.0, 1.0]
-      Lz = [0.0, 1.0]
+---------------------------------------------------------------------
+    Structure properties 
+---------------------------------------------------------------------
+      Box lengths: 
+        Lx (A) = [0.0, 1.0]
+        Ly (A) = [0.0, 1.0]
+        Lz (A) = [0.0, 1.0]
+      Volume 1000000.000000  A^3 
+      Mass 5.910000  AMU 
+      Density 0.000010 g/cm^3 
+      Lattice vectors 
+        v_i (A)  ( 100.000000 , 0.000000 , 0.000000 ) 
+        v_j (A)  ( 0.000000 , 100.000000 , 0.000000 ) 
+        v_k (A)  ( 0.000000 , 0.000000 , 100.000000 ) 
 
-************************************* 
- Structure contains: 
-************************************* 
-
- Contains particle objects: 
-1 {'position': [0.2, 1.3, 33.0], 'charge': 2.0, 'type': 'Si', 'mass': 1.23, 'tagsDict': {'type': 'Si'}}
-2 {'position': [5.0, 2.3, -22.1], 'charge': 1.0, 'type': 'C', 'mass': 2.34, 'tagsDict': {'type': 'C'}}
-3 {'position': [5.0, 2.3, -20.1], 'charge': 1.0, 'type': 'C', 'mass': 2.34, 'tagsDict': {'type': 'C'}}
-
- Contains bond objects: 
-
- Contains angle objects: 
-
- Contains dihedral objects: 
+      Particles 3 
+      Bonds  0 
+      Angles 0 
+      Dihedrals 0 
+      Impropers 0 
 
  
 -------------------- After changing polymer1 struc --------------------
 polymer1 =  
-************************************* 
- Global parameters: 
-************************************* 
-  Box lengths: 
-      Lx = [0.0, 1.0]
-      Ly = [0.0, 1.0]
-      Lz = [0.0, 1.0]
+---------------------------------------------------------------------
+    Structure properties 
+---------------------------------------------------------------------
+      Box lengths: 
+        Lx (A) = [0.0, 1.0]
+        Ly (A) = [0.0, 1.0]
+        Lz (A) = [0.0, 1.0]
+      Volume 1000000.000000  A^3 
+      Mass 4.680000  AMU 
+      Density 0.000008 g/cm^3 
+      Lattice vectors 
+        v_i (A)  ( 100.000000 , 0.000000 , 0.000000 ) 
+        v_j (A)  ( 0.000000 , 100.000000 , 0.000000 ) 
+        v_k (A)  ( 0.000000 , 0.000000 , 100.000000 ) 
 
-************************************* 
- Structure contains: 
-************************************* 
-
- Contains particle objects: 
-2 {'position': [5.0, 2.3, -22.1], 'charge': 1.0, 'type': 'C', 'mass': 2.34, 'tagsDict': {'type': 'C'}}
-3 {'position': [5.0, 2.3, -20.1], 'charge': 1.0, 'type': 'C', 'mass': 2.34, 'tagsDict': {'type': 'C'}}
-
- Contains bond objects: 
-
- Contains angle objects: 
-
- Contains dihedral objects: 
-
----------- Simulation object contains ------------
-
-************************************* 
- Global parameters: 
-************************************* 
-  Box lengths: 
-      Lx = [0.0, 1.0]
-      Ly = [0.0, 1.0]
-      Lz = [0.0, 1.0]
-
-************************************* 
- Structure contains: 
-************************************* 
-
- Contains particle objects: 
-2 {'position': [5.0, 2.3, -22.1], 'charge': 1.0, 'type': 'C', 'mass': 2.34, 'tagsDict': {'type': 'C'}}
-3 {'position': [5.0, 2.3, -20.1], 'charge': 1.0, 'type': 'C', 'mass': 2.34, 'tagsDict': {'type': 'C'}}
-
- Contains bond objects: 
-
- Contains angle objects: 
-
- Contains dihedral objects: 
+      Particles 2 
+      Bonds  0 
+      Angles 0 
+      Dihedrals 0 
+      Impropers 0 
 
 ---------- Simulation object contains ------------
 
-************************************* 
- Global parameters: 
-************************************* 
-  Box lengths: 
-      Lx = [0.0, 1.0]
-      Ly = [0.0, 1.0]
-      Lz = [0.0, 1.0]
+---------------------------------------------------------------------
+    Structure properties 
+---------------------------------------------------------------------
+      Box lengths: 
+        Lx (A) = [0.0, 1.0]
+        Ly (A) = [0.0, 1.0]
+        Lz (A) = [0.0, 1.0]
+      Volume 1000000.000000  A^3 
+      Mass 4.680000  AMU 
+      Density 0.000008 g/cm^3 
+      Lattice vectors 
+        v_i (A)  ( 100.000000 , 0.000000 , 0.000000 ) 
+        v_j (A)  ( 0.000000 , 100.000000 , 0.000000 ) 
+        v_k (A)  ( 0.000000 , 0.000000 , 100.000000 ) 
 
-************************************* 
- Structure contains: 
-************************************* 
+      Particles 2 
+      Bonds  0 
+      Angles 0 
+      Dihedrals 0 
+      Impropers 0 
 
- Contains particle objects: 
-1 {'position': [0.2, 1.3, 33.0], 'charge': 2.0, 'type': 'Si', 'mass': 1.23, 'tagsDict': {'type': 'Si'}}
-2 {'position': [5.0, 2.3, -22.1], 'charge': 1.0, 'type': 'C', 'mass': 2.34, 'tagsDict': {'type': 'C'}}
-3 {'position': [5.0, 2.3, -20.1], 'charge': 1.0, 'type': 'C', 'mass': 2.34, 'tagsDict': {'type': 'C'}}
+---------- Simulation object contains ------------
 
- Contains bond objects: 
+---------------------------------------------------------------------
+    Structure properties 
+---------------------------------------------------------------------
+      Box lengths: 
+        Lx (A) = [0.0, 1.0]
+        Ly (A) = [0.0, 1.0]
+        Lz (A) = [0.0, 1.0]
+      Volume 1000000.000000  A^3 
+      Mass 5.910000  AMU 
+      Density 0.000010 g/cm^3 
+      Lattice vectors 
+        v_i (A)  ( 100.000000 , 0.000000 , 0.000000 ) 
+        v_j (A)  ( 0.000000 , 100.000000 , 0.000000 ) 
+        v_k (A)  ( 0.000000 , 0.000000 , 100.000000 ) 
 
- Contains angle objects: 
-
- Contains dihedral objects: 
+      Particles 3 
+      Bonds  0 
+      Angles 0 
+      Dihedrals 0 
+      Impropers 0 
 

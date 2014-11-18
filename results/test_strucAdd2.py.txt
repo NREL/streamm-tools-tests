@@ -8,50 +8,68 @@
 
 -------------------- Before adding --------------------
 polymer1 =  
-************************************* 
- Global parameters: 
-************************************* 
-  Box lengths: 
-      Lx = [0.0, 1.0]
-      Ly = [0.0, 1.0]
-      Lz = [0.0, 1.0]
+---------------------------------------------------------------------
+    Structure properties 
+---------------------------------------------------------------------
+      Box lengths: 
+        Lx (A) = [0.0, 1.0]
+        Ly (A) = [0.0, 1.0]
+        Lz (A) = [0.0, 1.0]
+      Volume 1000000.000000  A^3 
+      Mass 5.910000  AMU 
+      Density 0.000010 g/cm^3 
+      Lattice vectors 
+        v_i (A)  ( 100.000000 , 0.000000 , 0.000000 ) 
+        v_j (A)  ( 0.000000 , 100.000000 , 0.000000 ) 
+        v_k (A)  ( 0.000000 , 0.000000 , 100.000000 ) 
 
-************************************* 
- Structure contains: 
-************************************* 
+      Particles 3 
+      Bonds  2 
+      Angles 0 
+      Dihedrals 0 
+      Impropers 0 
 
  Contains particle objects: 
-1 {'position': [1.1, 1.1, 1.1], 'charge': 2.0, 'type': 'Si', 'mass': 1.23, 'tagsDict': {'type': 'Si'}}
-2 {'position': [2.2, 2.2, 2.2], 'charge': 1.0, 'type': 'C', 'mass': 2.34, 'tagsDict': {'type': 'C'}}
-3 {'position': [3.3, 3.3, 3.3], 'charge': 1.0, 'type': 'C', 'mass': 2.34, 'tagsDict': {'type': 'C'}}
+ 1 :  Si 1.100000 1.100000 1.100000 2.000000 1.230000    
+ 2 :  C 2.200000 2.200000 2.200000 1.000000 2.340000    
+ 3 :  C 3.300000 3.300000 3.300000 1.000000 2.340000    
 
  Contains bond objects: 
-1 {'g_indx': 0, 'length': 1.111, 'pgid1': 1, 'pgid2': 2, 'type': 'hooke', 'lmpindx': 0}
-2 {'g_indx': 0, 'length': 2.222, 'pgid1': 2, 'pgid2': 3, 'type': 'hooke', 'lmpindx': 0}
+ 1 :  1 - 2    hooke  
+ 2 :  2 - 3    hooke  
 
  Contains angle objects: 
 
  Contains dihedral objects: 
 
 polymer2 =  
-************************************* 
- Global parameters: 
-************************************* 
-  Box lengths: 
-      Lx = [0.0, 1.0]
-      Ly = [0.0, 1.0]
-      Lz = [0.0, 1.0]
+---------------------------------------------------------------------
+    Structure properties 
+---------------------------------------------------------------------
+      Box lengths: 
+        Lx (A) = [0.0, 1.0]
+        Ly (A) = [0.0, 1.0]
+        Lz (A) = [0.0, 1.0]
+      Volume 1000000.000000  A^3 
+      Mass 4.680000  AMU 
+      Density 0.000008 g/cm^3 
+      Lattice vectors 
+        v_i (A)  ( 100.000000 , 0.000000 , 0.000000 ) 
+        v_j (A)  ( 0.000000 , 100.000000 , 0.000000 ) 
+        v_k (A)  ( 0.000000 , 0.000000 , 100.000000 ) 
 
-************************************* 
- Structure contains: 
-************************************* 
+      Particles 2 
+      Bonds  1 
+      Angles 0 
+      Dihedrals 0 
+      Impropers 0 
 
  Contains particle objects: 
-1 {'position': [1.11, 1.11, 1.11], 'charge': 1.0, 'type': 'C', 'mass': 2.34, 'tagsDict': {'type': 'C'}}
-2 {'position': [2.22, 2.22, 2.22], 'charge': 2.0, 'type': 'Ar', 'mass': 2.34, 'tagsDict': {'type': 'Ar'}}
+ 1 :  C 1.110000 1.110000 1.110000 1.000000 2.340000    
+ 2 :  Ar 2.220000 2.220000 2.220000 2.000000 2.340000    
 
  Contains bond objects: 
-1 {'g_indx': 0, 'length': 1.1, 'pgid1': 1, 'pgid2': 2, 'type': 'hooke-2', 'lmpindx': 0}
+ 1 :  1 - 2    hooke-2  
 
  Contains angle objects: 
 
@@ -60,29 +78,38 @@ polymer2 =
  
 -------------------- After adding --------------------
 polymer2 =  
-************************************* 
- Global parameters: 
-************************************* 
-  Box lengths: 
-      Lx = [0.0, 1.0]
-      Ly = [0.0, 1.0]
-      Lz = [0.0, 1.0]
+---------------------------------------------------------------------
+    Structure properties 
+---------------------------------------------------------------------
+      Box lengths: 
+        Lx (A) = [0.0, 1.0]
+        Ly (A) = [0.0, 1.0]
+        Lz (A) = [0.0, 1.0]
+      Volume 1000000.000000  A^3 
+      Mass 10.590000  AMU 
+      Density 0.000018 g/cm^3 
+      Lattice vectors 
+        v_i (A)  ( 100.000000 , 0.000000 , 0.000000 ) 
+        v_j (A)  ( 0.000000 , 100.000000 , 0.000000 ) 
+        v_k (A)  ( 0.000000 , 0.000000 , 100.000000 ) 
 
-************************************* 
- Structure contains: 
-************************************* 
+      Particles 5 
+      Bonds  3 
+      Angles 0 
+      Dihedrals 0 
+      Impropers 0 
 
  Contains particle objects: 
-1 {'position': [1.11, 1.11, 1.11], 'charge': 1.0, 'type': 'C', 'mass': 2.34, 'tagsDict': {'type': 'C'}}
-2 {'position': [2.22, 2.22, 2.22], 'charge': 2.0, 'type': 'Ar', 'mass': 2.34, 'tagsDict': {'type': 'Ar'}}
-4 {'position': [1.1, 1.1, 1.1], 'charge': 2.0, 'type': 'Si', 'mass': 1.23, 'tagsDict': {'type': 'Si'}}
-5 {'position': [2.2, 2.2, 2.2], 'charge': 1.0, 'type': 'C', 'mass': 2.34, 'tagsDict': {'type': 'C'}}
-6 {'position': [3.3, 3.3, 3.3], 'charge': 1.0, 'type': 'C', 'mass': 2.34, 'tagsDict': {'type': 'C'}}
+ 1 :  C 1.110000 1.110000 1.110000 1.000000 2.340000    
+ 2 :  Ar 2.220000 2.220000 2.220000 2.000000 2.340000    
+ 4 :  Si 1.100000 1.100000 1.100000 2.000000 1.230000    
+ 5 :  C 2.200000 2.200000 2.200000 1.000000 2.340000    
+ 6 :  C 3.300000 3.300000 3.300000 1.000000 2.340000    
 
  Contains bond objects: 
-1 {'g_indx': 0, 'length': 1.1, 'pgid1': 1, 'pgid2': 2, 'type': 'hooke-2', 'lmpindx': 0}
-3 {'g_indx': 0, 'length': 1.111, 'pgid1': 4, 'pgid2': 5, 'type': 'hooke', 'lmpindx': 0}
-4 {'g_indx': 0, 'length': 2.222, 'pgid1': 5, 'pgid2': 6, 'type': 'hooke', 'lmpindx': 0}
+ 1 :  1 - 2    hooke-2  
+ 3 :  4 - 5    hooke  
+ 4 :  5 - 6    hooke  
 
  Contains angle objects: 
 

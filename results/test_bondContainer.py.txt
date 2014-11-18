@@ -13,10 +13,10 @@ bond 2--3 does NOT exist
  
 Bonds:  
  Contains bond objects: 
-1 {'g_indx': 0, 'length': 1.233, 'pgid1': 1, 'pgid2': 2, 'type': 'hooke', 'lmpindx': 0}
-2 {'g_indx': 0, 'length': 0.5, 'pgid1': 3, 'pgid2': 4, 'type': 'hooke', 'lmpindx': 0}
-3 {'g_indx': 0, 'length': 0.0, 'pgid1': 0, 'pgid2': 0, 'type': 'blank', 'lmpindx': 0}
-4 {'g_indx': 0, 'length': 0.5, 'pgid1': 3, 'pgid2': 8, 'type': 'stiff', 'lmpindx': 0}
+ 1 :  1 - 2    hooke  
+ 2 :  3 - 4    hooke  
+ 3 :  0 - 0    blank  
+ 4 :  3 - 8    stiff  
 
  
 Test iterator for bond container 

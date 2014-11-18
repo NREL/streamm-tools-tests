@@ -26,8 +26,8 @@ Exisiting particles will updated with top information
   Reading  EQ_1.xtc and EQ_1.gro 
   Particles 992 
     Volume 125000.000000 
-    Mass 6229.843600 
-    Density 0.082759 
+    Mass 5797.843600 
+    Density 0.077020 
   Lattice vectors 
     v_i  [ 50.   0.   0.]
     v_j  [  0.  50.   0.]
@@ -43,7 +43,7 @@ None
     uni_j  24 
  search finished 
 
-  Date 2014-10-23 14:59:45.264824 
+  Date 2014-11-18 13:20:58.126052 
   Number of processors  1 
   Particles of group i: 24 
 ---------------------------------------------------------------------
@@ -88,9 +88,10 @@ Frame  100 with volume 125000.000000
 #      Sphere volume  33510.321638 A^3 
 #      Average Sphere density j  0.000181 N A^3 
 #    
-# bin index ; r     ; count_ave/frame  ; count_sum/frame/n_i ; dr vol ;  dr vol(aprox) ; g_sphere ; g_boxs  
+# r (A) ; g_boxs ; g_sphere ; count(r)/frame  ; count_sum/frame/n_i ;  count_sum/frame/n_j ; count_sum/frame/(n_i+n_j) ;  dr vol ;  dr vol(aprox) ; prob_i(<r) ;prob_j (<r)  ; ave_nn_i (<r)  ; ave_nn_i (<r)
+#   1        2         3             4                5                      6                      7                        8            9            10           11             12               13  
 
-  Finished time  2014-10-23 14:59:45.663257
+  Finished time  2014-11-18 13:20:58.624230
   Computation time 0 min 0 seconds 
 ParallelMsgr destructor called
  
