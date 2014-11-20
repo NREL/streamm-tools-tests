@@ -75,7 +75,7 @@ newTest() {
     testName=$1
     runCmd=$2
     echo "--------- Copying results for $testName ---------"
-    $runCmd $testName > results/$testName.txt
+    $runCmd ./$testName > results/$testName.txt
     echo "Remember to commit/push new results "
     echo "-----------------------------------------------------"
     echo " "
