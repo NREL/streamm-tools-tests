@@ -49,7 +49,8 @@ def main():
     bonds2.put(b1other)
 
     polymer2 = StructureContainer(atoms2, bonds2)  # Complete structure 1 completely
-
+    print "Number of particles in polymer2 = ", polymer2.getPtclNum()
+        
     del p1, p2, p3, p1other, p2other, b1, b2, b1other, atoms1, atoms2, bonds1, bonds2
     print "\n Cleaning memory for initial objects \n" 
 
@@ -61,6 +62,7 @@ def main():
     print "-------------------- After adding --------------------"
     polymer1 += polymer2
     print "polymer1 = ", polymer1
+    print "Number of particles in polymer1 after add = ", polymer1.getPtclNum()
 
     print "-------------------- Results (check above) --------------------"
     print " 1---b1---2---b2---3 + 1---b1----2   should go to"

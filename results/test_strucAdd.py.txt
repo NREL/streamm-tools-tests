@@ -2,6 +2,7 @@
  This test shows how to add StructureContainer objects together 
 ************************************************************************************ 
 
+Number of particles in polymer2 =  2
 
  Cleaning memory for initial objects 
 
@@ -114,6 +115,7 @@ polymer1 =
 
  Contains dihedral objects: 
 
+Number of particles in polymer1 after add =  5
 -------------------- Results (check above) --------------------
  1---b1---2---b2---3 + 1---b1----2   should go to
  
