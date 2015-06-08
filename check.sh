@@ -100,15 +100,6 @@ fi
 
 
 #
-# Should be moved when all AtomicPy code moved to STREAMM
-#
-PYTHONPATH=$PYTHONPATH:$TOOLS_PATH/AtomicPy/src
-export PYTHONPATH
-echo " "
-echo "PYTHONPATH = $PYTHONPATH"
-echo " "
-
-#
 # Main functions
 #
 if [ $# == 0 ]; then

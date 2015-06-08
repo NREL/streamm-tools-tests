@@ -19,5 +19,4 @@ python ~/Scripts/streamm/tools/scripts/rdf.py -j testmol/D1_R2R200_A2_R3_/acc1_D
  
 
 # Need atomicpy for now 
-PYTHONPATH=/Users/tkemper/Scripts/streamm/tools/AtomicPy/src/:$PYTHONPATH
 python ../../../opv-project/src/donoracceptorsystems.py  -b ../../../BuildingBlocks-private/   -r 1  " D100 "   --make_ff  
