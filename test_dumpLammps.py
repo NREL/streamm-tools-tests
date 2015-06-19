@@ -24,9 +24,9 @@ except:
     sys.exit(3)
 
 try:
-    import mpiNREL
+    import mpiBase
 except:
-    print "mpiNREL Module not found"
+    print "mpiBase Module not found"
     print "Try adding the following to your .bashrc file"
     print "   PYTHONPATH='path-to-runjobs.py':$PYTHONPATH'"
     print "   export PYTHONPATH"
@@ -375,7 +375,7 @@ def main():
     g=Geometry()
 
     # Get comm object
-    p = mpiNREL.getMPISerialObject()
+    p = mpiBase.getMPISerialObject()
     rank = p.getRank()
     size = p.getCommSize()
 

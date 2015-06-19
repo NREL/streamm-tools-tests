@@ -1,14 +1,14 @@
 #!/usr/bin/env python
 
-import mpiNREL
+import mpiBase
 
 def main():
     """
-    Testing methods in the python MPI wrapper classes (in mpiNREL.py)
+    Testing methods in the python MPI wrapper classes (in mpiBase.py)
     """
 
-    p = mpiNREL.getMPIObject(False, localVerbose=False)
-    # p = mpiNREL.getMPIObject(True, localVerbose=True)
+    p = mpiBase.getMPIObject(False, localVerbose=False)
+    # p = mpiBase.getMPIObject(True, localVerbose=True)
 
     # MPI setup
     rank = p.getRank()

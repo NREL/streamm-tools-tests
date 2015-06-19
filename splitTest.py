@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 
 import sys
-import mpiNREL
-p = mpiNREL.getMPIObject(False, localVerbose=False)
+import mpiBase
+p = mpiBase.getMPIObject(False, localVerbose=False)
 p.barrier()
 
 # MPI setup
