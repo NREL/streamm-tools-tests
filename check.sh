@@ -198,6 +198,7 @@ elif [ $1 == "clean" ]; then
     rm -rf test_rdf.log test_rdf.dat test*.pyc
     rm -rf replicate.gro replicate.json replicate.log replicate.xmol
     rm -rf test*.py.stat
+    rm -rf *.pkl qd.data*
 
 else
 
