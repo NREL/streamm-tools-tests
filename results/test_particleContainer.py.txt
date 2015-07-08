@@ -3,10 +3,10 @@
 
 x = atoms1[1] is returns x as an effective 'reference' 
 
-x =  {'position': [0.2, 1.3, 33.0], 'charge': 2.0, 'type': 'Si', 'mass': 1.23, 'tagsDict': {'residue': 1, 'lmptype': 0, 'chain': 1, 'linkid': '??', 'symbol': '??', 'gtype': 'Si', 'number': 0, 'vdw_radii': 0.0, 'cov_radii': 0.0, 'resname': 'RES', 'cplytag': '', 'mass': 1.23, 'qgroup': 0, 'ffmass': 1.23, 'type': 'Si', 'fftype': '??', 'ring': 0}} 
+x =  {'position': [0.2, 1.3, 33.0], 'charge': 2.0, 'type': 'Si', 'mass': 1.23, 'tagsDict': {'type': 'Si'}} 
 
 after changing with x.position = [1.0, 1.0, 1.0]
-x =  {'position': [1.0, 1.0, 1.0], 'charge': 2.0, 'type': 'Si', 'mass': 1.23, 'tagsDict': {'residue': 1, 'lmptype': 0, 'chain': 1, 'linkid': '??', 'symbol': '??', 'gtype': 'Si', 'number': 0, 'vdw_radii': 0.0, 'cov_radii': 0.0, 'resname': 'RES', 'cplytag': '', 'mass': 1.23, 'qgroup': 0, 'ffmass': 1.23, 'type': 'Si', 'fftype': '??', 'ring': 0}} 
+x =  {'position': [1.0, 1.0, 1.0], 'charge': 2.0, 'type': 'Si', 'mass': 1.23, 'tagsDict': {'type': 'Si'}} 
 
 atoms1 has been changed
 
