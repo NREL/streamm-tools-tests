@@ -200,6 +200,7 @@ elif [ $1 == "clean" ]; then
     rm -rf test*.py.stat
     rm -rf *.pkl qd.data*
 
+
 else
 
     # Run single test
