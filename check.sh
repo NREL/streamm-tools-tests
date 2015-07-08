@@ -199,6 +199,7 @@ elif [ $1 == "clean" ]; then
     rm -rf replicate.gro replicate.json replicate.log replicate.xmol
     rm -rf test*.py.stat
     rm -rf *.pkl qd.data*
+    rm -rf test-strucAddBig-timing.dat
 
 else
 
