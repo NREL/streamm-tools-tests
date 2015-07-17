@@ -42,6 +42,7 @@ usage = """
        4. Rename test_XXXX.ipynb to example_XXXX.ipynb and move to tools/docs/source
        5. Use 'ipython nbconvert --to rst example_XXXX.ipynb' to create example_XXXX.rst file
        6. Add .rst file to docs
+       7. Add download line for ipynb file to example_XXXX.rst file
 """
 
 parser.set_usage(usage)
