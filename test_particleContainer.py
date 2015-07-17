@@ -27,8 +27,7 @@ def main():
     del p1, p2, p3, p4
     print "\n Cleaning memory for initial objects \n" 
 
-    # This is a shallow copy
-    print "x = atoms1[1] is returns x as an effective 'reference' \n"
+    print "x = atoms1[1] returns x as an effective 'reference' \n"
     x = atoms1[1]
     print "x = ", x.__dict__, "\n"
     x.position=[1.0, 1.0, 1.0]
