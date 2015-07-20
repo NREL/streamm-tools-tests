@@ -43,6 +43,7 @@ usage = """
        5. Use 'ipython nbconvert --to rst example_XXXX.ipynb' to create example_XXXX.rst file
        6. Add .rst file to docs
        7. Add download line for ipynb file to example_XXXX.rst file
+       8. Add all new files to repo with 'git add' and commit/push
 """
 
 parser.set_usage(usage)
