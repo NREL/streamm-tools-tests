@@ -12,7 +12,7 @@ from parameters import dihtype
 
 def main():
     """
-    TRAVIS document
+    This test sets creates a parameter container for classical force field parameters and adds LJ paramters, Bonds  Angles and Dihedrals 
     """
     # Create parameter container
     paramC =  ParameterContainer()
