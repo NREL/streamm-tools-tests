@@ -83,23 +83,6 @@ newTest() {
 
 
 #
-# Check if TOOLS_PATH is set
-#
-if [ ! -n "${TOOLS_PATH+1}" ]; then
-    echo " "
-    echo "---------------------------------------------------------------"
-    echo "TOOLS_PATH is unset. Set location of 'tools' repo to this var"
-    echo " "
-    echo " eg: TOOLS_PATH='path-to-tools'/tools"
-    echo "     then "
-    echo "     export TOOLS_PATH"
-    echo "---------------------------------------------------------------"
-    echo " "
-    exit
-fi
-
-
-#
 # Main functions
 #
 if [ $# == 0 ]; then
