@@ -6,7 +6,14 @@ from periodictable import periodictable
 def main():
 
     """
-    TRAVIS: document
+    Test functionality of periodictable
+
+       - print atomic symbol and mass
+       - find an element with mass 12.0110
+          print  it's properties
+       - find an element with symbol S
+          print  it's properties
+          
     """
     
     # Set periodic table element 
