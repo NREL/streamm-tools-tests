@@ -6,14 +6,8 @@ from periodictable import periodictable
 def main():
 
     """
-    Test functionality of periodictable
-
-       - print atomic symbol and mass
-       - find an element with mass 12.0110
-          print  it's properties
-       - find an element with symbol S
-          print  it's properties
-          
+    Test functionality of periodictable: 1) print atomic symbol and mass, 2) find an element with mass 12.0110
+    3) print  it's properties, 4) find an element with symbol S and 5) print  it's properties
     """
     
     # Set periodic table element 
