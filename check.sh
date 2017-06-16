@@ -27,6 +27,7 @@ usage() {
     echo " "
     echo " "
     echo "Note: if parallel np > 2 tests needed script will need to be edited"
+    echo "      mpirun must be installed apart from python mpi package"
     echo " "
 }
 
@@ -57,11 +58,11 @@ compareTest() {
 
     # Status message
     if [ $diffLength == '0' ]; then
-	printf "Running $runCmd $testName: %${COLUMNS}s\n" "Passed"
+        printf "Running $runCmd $testName: %${COLUMNS}s\n" "Passed"
     else
         echo   "-----------------------------------------------------------"
-	printf "Running $runCmd $testName: %${COLUMNS}s\n"          "FAILED"
-	echo   "        Check $testName.stat for details                   "
+        printf "Running $runCmd $testName: %${COLUMNS}s\n"          "FAILED"
+        echo   "        Check $testName.stat for details                   "
         echo   "-----------------------------------------------------------"
     fi
 }
@@ -98,22 +99,22 @@ elif [ $1 == "new" ]; then
     echo "Proceed [y]yes [n]no"
     read -e ans
     if [ $ans == "y" ]; then
-	echo " "
+        echo " "
     else
-	echo " "; exit
+        echo " "; exit
     fi
 
     # Serial test
     testNames=`ls -1 test_*.py |grep -v test_n2 |grep -v test_nX`
     runCmd="python"
     for testName in $testNames; do
-	newTest $testName $runCmd
+        newTest $testName $runCmd
     done
 
     # Parallel test (np = 2)
     testNames=`ls -1 test_n2_*.py`
     for testName in $testNames; do
-	newTest $testName ' mpirun -n 2'
+        newTest $testName ' mpirun -n 2'
     done
 
 
@@ -122,25 +123,25 @@ elif [ $1 == "all" ]; then
     echo " "
     echo "Comparing results against python test files"
     echo "Looking for tests named 'test_*.py'  "
-    echo " " 
+    echo " "
 
     # Serial test
     testNames=`ls -1 test_*.py |grep -v test_n2 |grep -v test_nX`
     runCmd="python "
     for testName in $testNames; do
-	compareTest $testName $runCmd
+        compareTest $testName $runCmd
     done
 
     # Parallel test (np = 2)
     testNames=`ls -1 test_n2_*.py`
     for testName in $testNames; do
-	compareTest $testName 'mpirun -n 2'
+        compareTest $testName 'mpirun -n 2'
     done
 
     # Parallel test (series of parallel runs that are calling mpirun internally)
     testNames=`ls -1 test_nX_*.py`
     for testName in $testNames; do
-	compareTest $testName
+        compareTest $testName
     done
 
     echo " "
@@ -157,17 +158,17 @@ elif [ $1 == "replace" ]; then
     echo "Proceed [y]yes [n]no"
     read -e ans
     if [ $ans == "y" ]; then
-	echo " "
+        echo " "
     else
-	echo " "; exit
+        echo " "; exit
     fi
 
     if [[ $testName == *n2* ]]; then
         # Pick out job to run on 2 procs
-	newTest $testName ' mpirun -n 2'
+        newTest $testName ' mpirun -n 2'
     else
         # Serial job
-	newTest $testName " "
+        newTest $testName " "
     fi
 
 
@@ -193,16 +194,16 @@ else
 
     if test -f $testName; then
 
-	if [[ $testName == *n2* ]]; then
+        if [[ $testName == *n2* ]]; then
             # Pick out job to run on 2 procs
-	    compareTest $testName 'mpirun -n 2'
-	else
+            compareTest $testName 'mpirun -n 2'
+        else
             # Serial/other jobs
-	    compareTest $testName ''
-	fi
+            compareTest $testName ''
+        fi
 
     else
-	echo "Test name does not exist"
+        echo "Test name does not exist"
     fi
 
 
